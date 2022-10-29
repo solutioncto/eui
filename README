@@ -1,0 +1,11 @@
+/* Copyright Eric Baller and other contributors; Licensed MIT */
+
+EUI Calculator
+
+Installation:
+1. You will need a database to hold the lookup tables. Database initialization in database.sql.
+2. You will need an API account with the Building Performance Database, free at https://bpd.lbl.gov/
+	Until you have it, report.php checks an environment variable and returns a sample file.
+
+Usage:
+The calculator is designed as an iframe. See test.html for an example reference page.

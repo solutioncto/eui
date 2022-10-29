@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Quick opportunity survey</title>
+	
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/savings.css" media="all" />
+	
+    <script type="text/javascript" src="js/savings.js?auto=1"></script>
+
+</head>
+<body>
+	
+	<div id="icontainer">
+	
+            <!-- #first_step -->
+            <div id="first_step">
+                <div class="form">
+                    <div class="row">
+                        <div class="col-md-12">
+							<img src='images/whereHouse.png' margin='5%' width='90%'/>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+							<h4>
+                    		Use this calculator to compare your house against thousands in the Department of Energy’s dataset.
+							</h4>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                    		<label for="zip">Your ZIP code (for climate data):</label>
+      						<input name "zip" id="zip" type="text" size="10">
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                    		<label for="sqft">Approximate square feet:<br>(estimate within 100 or check zillow)</label>
+      						<input name="sqft" id="sqft" type="text" size="10">
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+							<h4>
+							Please provide your total energy use for the past year.
+							</h4>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                    		<label for="electric">Annual KWH of electricity:<br>(typically 6,000 to 10,000)</label>
+      						<input id="electric" type="text" size="10">
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                    				<label for="fuel">Other Fuel:<br>(many heat with gas, oil, or other fuel)</label>
+                    				<select id="fuel" name="fuel">
+                        				<option value="Oil" selected="true" >Heating Oil (gallons)</option>
+                        				<option value="Propane" >Propane (gallons)</option>
+                        				<option value="Gas" >Natural Gas (measured in therm)</option>
+                        				<option value="CCF" >Natural Gas (measured in CCF)</option>
+                        				<option value="MCF" >Natural Gas (measured in MCF)</option>
+                        				<option value="Other" >Other (wood, etc) BTUs</option>
+                        				<option value="None">None (electric only)</option>
+                    				</select>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                    				<label for="gas">Enter annual units of consumption<br>for the fuel you selected:</label>
+      						<input name="gas" id="gas" type="text" size="10">
+						</div>
+		    		</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                			<input class="submit" type="submit" name="submit_first" id="submit_first" value="" />
+						</div>
+		    		</div>
+            </div>
+            </div>
+			<!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+
+            <!-- #second_step -->
+            <div id="second_step">
+			<div id="comparison">
+
+  				<h3>Results So Far</h3>
+				<div id="inputForm" class="form">
+
+				  <div class="smallpanelFactList">
+					<table border="0" frame="box" rules="all" cellpadding="4">
+					<tr><td colspan="2"><strong>Your Home</strong></td></tr>
+					<tr><td>Postal Code</td>
+						<td><input id="zip2" name="zip2" type="text" value="0" /></td>
+						<td></td>
+						<td style="min-width:30px;"></td>
+						<td>Building</td>
+						<td><input id="sqft2" name="sqft2" type="text" value="0" /></td>
+						<td>Sq Ft </td>
+					</tr>
+					<tr><td>Electric</td>
+						<td><input id="electric2" name="electric2" type="text" value="0" /></td>
+						<td>kWh/year</td>
+						<td></td>
+						<td><div id="OldFuel" /></td>
+						<td><input id="gas2" name="gas2" type="text" value="0" /></td>
+						<td><div id="OldUnit" /></td>
+					</tr>
+					<tr><td colspan="7">
+							<div class="eui_text">
+							<div id="euiTop">Calculating...</div>
+							</div>
+						</td>
+					</tr>
+				  	<tbody id="priceInputs" style="display:none;">
+						<tr><td colspan="2"><strong>Your Energy Prices</strong></td></tr>
+						<tr><td>Electric</td>
+							<td><input id="elecRate2" name="elecRate2" type="text" value="0.2" /></td>
+							<td> / kWh </td><td style="min-width:30px;"></td>
+							<td><div id="fueltype2">Fuel Rate</div></td>
+							<td><input id="fuelRate2" name="fuelRate2" type="text" value="1" /></td>
+							<td><div id="fuelUnit2"></div></td>
+						</tr>
+						<tr><td colspan="6">
+							<div class="eui_text">
+							Your average monthly cost of energy:
+							</div>
+						</td>
+						<tr><td>Electric</td>
+							<td><div class="smallright" id="elecCostResult"></div></td>
+							<td> / month </td><td style="min-width:30px;"></td>
+							<td><div id="fueltype2">Fuel Cost</div></td>
+							<td><div class="smallright" id="fuelCostResult"></div></td>
+							<td> / month</td>
+						</tr>
+						<tr><td colspan="6">
+							<div class="eui_text">
+							<div id="costTop"></div>
+							</div>
+							</td>
+						</tr>
+					</tbody>
+				  	<tbody id="financeInputs" style="display:none;">
+						<tr><td colspan="2"><strong>Your Lifetime Value</strong></td></tr>
+						<tr><td>Rate</td>
+							<td><input id="finRate2" name="finRate2" type="text" value="5" /></td>
+							<td>%</td><td style="min-width:30px;"></td>
+							<td>Term</td>
+							<td><input id="finTerm2" name="finTerm2" type="text" value="30" /></td>
+							<td><div id="finUnit2"> years</div></td>
+						</tr>
+						<tr><td colspan="6">
+							<div class="eui_text"><strong>
+							Comparison to the average home:
+							</strong>
+							</div>
+						</td>
+						<tr><td>Your Energy Costs </td>
+							<td><div class="smallright" id="myMonthCosts"></div></td>
+							<td> / month </td><td style="min-width:30px;"></td>
+							<td><div id="fueltype2">Average Energy Costs </div></td>
+							<td><div class="smallright" id="avgMonthCosts"></div></td>
+							<td> / month</td>
+						</tr>
+						<tr><td colspan="2">Your Total Cost</td>
+							<td><div class="smallright" id="myNPV"></div></td>
+							<td style="min-width:30px;"></td>
+							<td colspan="2"><div id="fueltype2">Average Total Costs</div></td>
+							<td><div class="smallright" id="avgNPV"></div></td>
+						</tr>
+						<tr><td colspan="6">
+							<div class="eui_text">
+							<div id="finTop"></div>
+							</div>
+							</td>
+						</tr>
+					</tbody>	
+
+				  	<tbody id="ratingInputs" style="display:none;">
+						<tr><td colspan="7"><strong>Your Home Performance Rating</strong></td></tr>
+						<tr><td colspan="3">HERS rated (blank=unrated):</td>
+							<td colspan="4">
+								<input id="hers2" name="hers2" type="text" value="" />
+							</td></tr>
+						<tr><td colspan="3">Energy Inputs:</td>
+							<td colspan="2">
+								<label><input id="estAct2" type="radio" name="estimate2" value="Actual">Actual</label>
+							</td>
+							<td colspan="2">
+								<label><input id="estEst2" type="radio" name="estimate2" value="Estimated">Estimated</label>
+							</td></tr>
+						<tr><td colspan="7"><strong>Summary</strong></td></tr>
+						<tr><td colspan="6">
+							<div class="eui_text">
+							<div id="hersTop"></div>
+							</div>
+							</td>
+						</tr>
+					</tbody>	
+
+					</table>
+      				<input id="codename" type="hidden" value="unset">
+      				<input id="fuel2" type="hidden" value="unset">
+      				<input id="source" type="hidden" value="unset">
+				  </div>	<!-- smallpanelFactList -->
+                <input class="update" type="submit" name="submit_again" id="submit_again" value="" />
+				</div>	<!-- form -->
+
+			<!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+
+				<div id="priceSection">
+  					<h3>Add Your Energy Costs</h3>
+					<div class="panel">
+
+                	<div class="form">
+				  	<div class="smallpanelFactList">
+						Cost information based on national averages. For more accuracy, divide your total costs (utility and supply) by your usage last month to fill in your own rate and press 'Next' to calculate.
+						<table border="0" frame="box" rules="all" cellpadding="4">
+						<tr><td>Electric</td>
+							<td><input id="elecRate" name="elecRate" type="text" value="0" /></td>
+							<td> / kWh </td>
+							<td style="min-width:30px;"></td>
+							<td><div id="fueltype">Fuel Rate</div></td>
+							<td><input id="fuelRate" name="fuelRate" type="text" value="0" /></td>
+							<td><div id="fuelUnit"></div></td>
+						</tr>
+						</table>
+				  	</div>	<!-- smallpanelFactList -->
+                <input class="next" type="submit" name="submit_cost" id="submit_cost" value="" />
+					</div>	<!-- form -->
+					</div>	<!-- panel -->
+				</div>	<!-- priceSection -->
+
+				<div id="financeSection" style="display:none;">
+  					<h3>Add Your Financing Assumptions</h3>
+					<div class="panel">
+
+                	<div class="form">
+				  	<div class="smallpanelFactList">
+						The value of your cost savings is your how much you save each month into the future.
+						You can calculate that with an interest rate you would use for receiving money now and paying it back in the future.
+						<table border="0" frame="box" rules="all" cellpadding="4">
+						<tr><td>Interest Rate</td>
+							<td><input id="finRate" name="finRate" type="text" value="5.0" /></td>
+							<td> % </td>
+							<td style="min-width:30px;"></td>
+							<td>Term</td>
+							<td><input id="finTerm" name="finTerm" type="text" value="30" /></td>
+							<td> years.</td>
+						</tr>
+						</table>
+				  	</div>	<!-- smallpanelFactList -->
+                <input class="next" type="submit" name="submit_finance" id="submit_finance" value="" />
+					</div>	<!-- form -->
+					</div>	<!-- panel -->
+				</div>	<!-- financeSection -->
+
+				<div id="ratingSection" style="display:none;">
+  					<h3>Final Details</h3>
+					<div class="panel">
+
+                	<div class="form">
+				  	<div class="smallpanelFactList">
+						<table width="100%" border="0" frame="box" rules="all" cellpadding="4">
+						<tr><td colspan="3">
+							If you have a HERS Rating for your home, lets compare that analysis to your actual performance.
+							</td>
+						</tr>
+						<tr><td>HERS Rating (leave blank if not rated)</td>
+							<td colspan="2"><input id="hers" name="hers" type="text" value="" /></td>
+						</tr>
+						<tr><td>Were your energy inputs Actual or Estimated?</td>
+							<td class="width25">
+								<label><input id="estAct" type="radio" name="estimate" value="Actual">Actual</label>
+							</td>
+							<td class="width25">
+								<label><input id="estEst" type="radio" name="estimate" value="Estimated" checked>Estimated</label>
+							</td>
+						</tr>
+
+						</table>
+				  	</div>	<!-- smallpanelFactList -->
+           			<input class="next" type="submit" name="submit_rating" id="submit_rating" value="" />
+					</div>	<!-- form -->
+					</div>	<!-- panel -->
+				</div>	<!-- ratingSection -->
+
+			<!-- clearfix --><div class="clear"></div><!-- /clearfix -->
+				<div class="panel">
+  				<h3>Summary</h3>
+			  				<div id="financeResults"></div>
+			  				<div id="priceResults"></div>
+                    			<div class="row">
+                        			<div class="col-md-12">
+										<img id='euiscale' src='images/euiNumbers.png' width='80%'/>
+										<br>
+										<div id="eui">Calculating</div>
+									</div>
+								</div>
+                    			<div class="row">
+                        				<div class="col-md-12">
+<div id="euiQuartiles"></div>
+<button class="accordion">The Most Efficient Homes</button>
+<div class="accordion_panel">
+	<p>
+You rock! If you don’t have comfort, moisture, durability or health issues, why are you here?? In all seriousness, if you'd like information or help with specific problems, complete the information below and we'll send you a report with possible next steps.
+	<p>
+</div>
+
+<button class="accordion">Better than Average</button>
+<div class="accordion_panel">
+	<p>
+If your home is comfortable and healthy you are doing pretty well. If you'd like information or help with specific problems, complete the information below and we'll send you a report with possible next steps.
+	<p>
+</div>
+
+<button class="accordion">Worse than Average</button>
+<div class="accordion_panel">
+	<p>
+Many homeowners in this range feel that, given their energy bills, their homes are uncomfortable. Temperatures from room to room can vary more than 2-3 degrees. Humidity and smells may be hard to control. Often there are health issues like dampness, stagnant air, and microbial growth. If you'd like information or help with specific problems, complete the information below and we'll send you a report with possible next steps.
+	<p>
+</div>
+
+<button class="accordion">The Worst Homes</button>
+<div class="accordion_panel">
+	<p>
+We view high EUI homes as excellent opportunities for Comprehensive Home Performance - homeowners in these homes typically feel that their energy bills are crazy and their homes are really uncomfortable. Temperatures from room to room can vary more than 5-6 degrees, and some rooms may be unusable in some seasons. Humidity and smells may be hard to control. Often there are health issues like dampness, stagnant air, and microbial growth. If you'd like information or help with specific problems, complete the information below and we'll send you a report with possible next steps.
+	<p>
+</div>
+									</div>
+							</div>
+
+				<h3>Send for a complete analysis, including climate zone specifics.</h3> 
+           		<div class="row">
+               		<div class="col-sm-6">
+						<table>
+							<tr><td>First Name</td></tr>
+							<tr><td><input type="text" name="first" id="first" size="20" value="" class="text-input" /></td></tr>
+							<tr><td>Email</td></tr>
+							<tr><td><input type="text" name="email" id="email" size="20" value="" class="text-input" /> </td></tr>
+							<tr><td>Click SEND for your PDF report.</td></tr>
+							<tr><td><input class="send submit" type="submit" name="submit_email" id="submit_email" value="" /></td></tr>
+						</table>
+					</div>
+               		<div class="col-sm-6">
+						Sample Report - page 1:
+						<br>
+						<img src='images/sample.png' width='350'/>
+					</div>
+				</div>
+			</div>	<!-- small -->
+      	</div>	<!-- second_step -->
+    </div>	<!-- icontainer -->
+            
+</body>
+</html>

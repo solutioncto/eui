@@ -1,0 +1,303 @@
+/* Copyright Eric Baller and other contributors; Licensed MIT */
+
+/* CSS Reset (Eric Meyer) */
+/* html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0} */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0}ol,ul{list-style:none}blockquote,q{quotes:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+body {
+    background-color: #f9f9f9;
+    color: #222;
+    font-family: Ariel, Verdana, sans-serif;
+    font-size: 12px;
+	vertical-align: middle;
+	margin: 2px 0px;
+}
+
+h3 {
+   font: bold 18px/36px Helvetica, Sans-Serif; 
+}
+
+h4 {
+   font: bold 14px/28px Helvetica, Sans-Serif; 
+   margin: 8px 0px;
+}
+
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner { border : none; } 
+input[type="submit"]:focus, input[type="button"]:focus { outline : none; }
+
+.clear { clear: both; }
+
+#eui {
+   position: absolute; 
+   bottom: 1px; 
+   z-index: 1000;
+}
+
+.eui_text {
+        font-family: Ariel, sans-serif;
+        font-size: 12px;
+}
+
+#hiddenField {
+    width: 600px;
+    min-height: 50px;
+    background-color:#223FCD;
+    color:#F2D595;
+    display:block;
+}
+#icontainer {
+    margin: 20px auto;
+    padding: 50px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+    #icontainer #first_step, #second_step, #third_step, #fourth_step, #fifth_step { display: none; }
+    #icontainer #first_step { display: block; }
+
+    #icontainer .form { margin: 20px 20px 0 20px; }
+    
+    #icontainer h1, #icontainer h2 {
+        font-family: Ariel, sans-serif;
+        font-size: 18px;
+    	margin-left: 20px;
+    }
+        #icontainer h1 span { color: #03a929; }
+        
+    #icontainer h2 {
+        color: #888;
+        font-size: 16px;
+        text-align: left;
+        text-shadow: none;
+    }
+    
+    #icontainer input, #icontainer select {
+        background: url('../images/input.png') no-repeat;
+        color: #888;
+        border: 1px solid #ccc;
+        font-family: Ariel, sans-serif;
+        font-weight: bold;
+        font-size: 12px;
+        width: 250px;
+        height: 35px;
+        padding: 0 25px;
+        margin: 5px;
+        float: left;
+        
+        border-radius: 6px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+    }
+
+        #icontainer input.submit {
+            background: url('../images/submit.png') no-repeat;
+            border: none;
+            cursor: pointer;
+            width: 85px;
+            height: 38px;
+            bottom: 2px;
+            left: 50px;
+        }
+            #icontainer input.submit:focus { border: none; }
+        
+        #icontainer input.send{
+			background: url('../images/send.png') no-repeat;
+            width: 95px;
+			left:20px;
+		}
+
+        #icontainer input.update{
+			background: url('../images/update70.png') no-repeat;
+			left:20px;
+            width: 95px;
+            height: 38px;
+    		border: none;
+			}
+
+        #icontainer input.calc{
+			background: url('../images/submit.png') no-repeat;
+            left: 545px;
+			right: 0px;
+		}
+            
+        #icontainer input.next{
+			background: url('../images/next.png') no-repeat;
+            width: 95px;
+			left:20px;
+    		border: none;
+		}
+
+        #icontainer input.error { border: 1px solid red; }
+        #icontainer input.valid { border: 1px solid #1FFF00; }
+        #icontainer select.error { border: 1px solid red; }
+        #icontainer select.valid { border: 1px solid #1FFF00; }
+        
+        #icontainer input:focus, #icontainer select:focus {
+            border: 1px solid #03a929;
+            color: #03a929;
+        }
+
+    #icontainer select { padding: 5px 0 5px 25px; }
+        #icontainer option { padding: 0 15px; }
+
+    #icontainer label {
+        color: #666;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 14px;
+        float: left;
+        margin: 8px 0px;
+        width: 250px;
+   		font-weight: 100;
+    }
+    
+#comparison {
+    margin-left: 20px;
+}
+    
+.capture {
+    margin-left: 20px;
+}
+
+#icontainer .capture input {
+        width: 175px;
+}
+    
+#icontainer .my-inline {
+   font: 8px/16px Helvetica, Sans-Serif; 
+   margin: 8px 0px;
+   display: inline-block;
+   width: 25px;
+   height: 12px;
+   padding: 0 5px;
+   margin: 3px;
+  }
+
+#icontainer .label-inline {
+   width: 125px;
+  }
+
+#progress_bar {
+    background: url('../images/progress_bar.png') no-repeat;
+    width: 339px;
+    height: 24px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#progress {
+    background: url('../images/progress.png') repeat-x;
+    width: 0px;
+    height: 23px;
+    
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+#progress_text {
+    position: relative;
+    line-height: 21px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px #222;
+    width: 339px;
+    height: 24px;
+    top: -23px;
+    left: 0;
+}
+
+#icontainer .smallpanelFactList select,
+#icontainer .smallpanelFactList input {
+    font-size: 12px;
+    line-height: 14px;
+	padding:2px;
+    margin: 3px;
+	width: 70px;
+	height: 18px;
+	vertical-align:middle;
+}
+
+.width25 {
+	width: 90px;
+}
+
+.width50 {
+	width: 50%;
+}
+
+#icontainer .smallpanelFactList table th {
+	padding-top:20px;
+	padding-bottom:10px;
+}
+
+#icontainer .smallpanelFactList input.submit {
+	left: 0;
+    background: url('') no-repeat;
+    border: 1px solid #ccc;
+}
+
+#second_step .form input, .calcField {
+	text-align:center;
+	margin: 3px;
+}
+
+#smallright {
+	text-align:right;
+}
+
+#smallcenter {
+	text-align:center;
+}
+
+#savings {
+	text-align:center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#message {
+	margin: 40px;
+	text-align:center;
+    font-size: 14px;
+	line-height:18px;
+}
+
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: left;
+    margin-right: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.accordion_panel {
+    padding:  0 8px;
+    font-size: 14px;
+	line-height:18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}

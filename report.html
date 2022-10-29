@@ -1,0 +1,353 @@
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/exporting.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom CSS -->
+<link href="css/modern-business.css" rel="stylesheet">
+<link href="css/cto.css" rel="stylesheet">
+
+<script>
+$(document).ready(function() {
+var scatterdata= [[1999.271636148,52.55005495639],[735.86336352784,104.99142434603],[1856.3223488393,39.342645271507],[823.39593610107,53.786276082869],[918.37116080579,60.608123717078],[778.89789389523,49.396606495293],[1642.7897318497,117.68304838632],[1858.8418652657,56.691829603444],[663.08342077345,117.2142177332],[1200.6424813868,61.987847485736],[642.76380453333,73.078812897557],[1002.225598839,35.555642727673],[1213.0565312164,51.108914558742],[809.49316003849,41.748500992989],[937.49493917068,102.66780201351],[2410.4007999123,32.277977907775],[1908.0894439754,55.985270341383],[765.46629594472,45.879361979728],[2602.9044734207,16.087019092601],[714.75007974556,87.066381243534],[1236.0893482411,57.931169837335],[1524.1788854247,56.132244868852],[906.76039406191,58.827564364349],[956.03986134978,74.362740664235],[1877.0887976504,23.38266840766],[814.9371624187,29.756376986494],[2421.182167792,48.595065783066],[1289.6802066931,44.386546209658],[1508.4935454521,82.814832898617],[1494.4525204938,89.870688067373],[1397.5192990061,72.701537268197],[1139.9352661131,30.35470411649],[858.59273042536,19.61385301342],[2753.1005541966,5.5792929900256],[1181.2385575069,70.018284478072],[1677.4716213389,24.14775580321],[1021.7060430465,23.718700642253],[1333.1667116748,56.671344358382],[1187.8823770126,23.318477446094],[1495.4960555505,55.854973472005],[3020.7919936051,37.403511644793],[1410.1475940427,63.105849673251],[2159.5220334478,35.141110662562],[762.43559823826,120],[814.35356535778,11.610046118336],[2888.8682800015,17.474799889154],[1967.2245500846,11.002810595522],[1431.8263884922,53.027916007993],[1274.3683490839,85.109225416875],[2370.9130344555,27.709355788034],[1174.6898826012,41.167992205781],[1864.7626696346,54.459824829167],[1208.1265376304,16.723004805798],[2624.9789420393,54.720735452115],[2385.9876704361,29.091726137308],[859.80262906054,22.00227025623],[1918.1119920857,49.152897440551],[893.28706603628,64.82853384924],[671.94774875776,26.081379438715],[2203.1478057645,43.069162705625],[933.34690648206,28.121989244448],[1732.9769866709,30.055940882131],[2570.0082797632,22.853038842626],[2534.0642212911,8.2316244609886],[1375.1932980882,60.852921736177],[857.06555306518,40.097357745913],[939.13462521831,53.500242075702],[1634.4299030879,15.645639260992],[940.01352803917,39.581307226786],[2150.453534635,50.671223069494],[975.839099654,99.96998885872],[1472.6061347935,60.835889311574],[1548.0677813685,50.359851120579],[1315.2231284393,102.76634104262],[610.68666084201,76.428447673973],[825.42124843379,49.845779616397],[950.98878253212,22.672721086079],[1104.9193294634,32.581908325977],[1812.3435798345,60.62127184203],[1052.2551926926,7.3866644845739],[1077.7871722672,10.988928065618],[905.05629531077,8.7475823331943],[1367.4757206992,47.198150882845],[941.55468149308,9.2506653739404],[2075.1326842109,7.2657578643525],[826.47295434659,12.603038167138],[1166.5507148099,31.418043848656],[1972.6223488875,15.716284417528],[1235.8744861347,75.814768104437],[894.75790166649,23.662048219974],[1528.7446096996,86.797623067985],[2292.6179433603,39.714895592406],[2149.1810208317,35.59575938643],[907.05506529484,89.475439545828],[903.62207641183,64.739615908002],[1752.6648564437,57.190917010514],[923.82010142593,6.579776514499],[846.18907688047,11.698288425041],[759.27933912979,17.07964206874],[2231.8421679447,29.692120597409],[1939.7797036098,70.675186757253],[1614.3563544635,53.699451794531],[1296.165573994,42.321202554042],[2316.4583936006,46.23435165946],[1244.86080405,32.085842426506],[737.99295244122,14.564676460531],[488.16162975803,64.370413075957],[946.99290082393,11.571914035033],[1353.3511106462,56.585501572113],[2972.8418312479,10.433939442829],[822.14894320935,120],[577.26443140277,16.049760779377],[2311.863154609,47.419585800403],[662.79318049684,5.1488169475449],[2142.7840386897,30.457015426739],[1722.9177928372,36.152487470203],[2953.1163422768,29.598289733467],[1913.6673047263,42.955019524776],[1568.4902029253,69.388887615964],[2279.027363795,8.3619221646029],[2284.7712321216,23.704497697607],[618.25109304836,19.17879572769],[941.39668101645,120],[649.09765710236,56.306788297056],[671.32981107465,39.76436524422],[1240.7995195526,20.078600009226],[1833.6347289123,36.249869805755],[2916.4527116454,35.024798340351],[1330.0607521496,61.099973987742],[614.1327350419,9.340212652589],[2737.2750662738,35.464023384053],[1392.4562345265,68.919404135953],[1693.2713859007,61.95303739039],[2358.7207983066,36.782885615544],[955.89871202476,19.143241311043],[2748.5919349327,11.532731554711],[1038.9562037184,120],[761.36526959294,17.352773840682],[834.26511929203,21.111345151272],[961.18001008875,56.955645433222],[1425.9748651798,11.73273480115],[969.42739570146,99.602156211661],[2463.5907885873,52.200132471848],[1764.5543897829,14.072630444415],[1374.4154705104,83.707572919707],[1363.3034169202,48.548272537657],[1711.724843595,42.78516862105],[866.06146553645,31.829805714711],[1563.2800190112,68.44081750386],[1003.5746559068,68.572626526016],[1033.7732222065,102.74349850505],[830.05501296902,25.168387178096],[1372.2820929597,22.741887416482],[1270.1610844171,22.385791365276],[826.99722313956,72.929042036059],[1089.9430708736,70.102534341257],[2488.8167478008,56.981080417888],[2056.5972211637,56.339012703676],[2206.0332117009,49.014712271821],[904.31283725023,19.279639542484],[927.23350667085,52.095691273555],[616.61559137038,14.015243368082],[1366.1940219815,68.862106652401],[1691.8870713463,25.28236575778],[988.85543881176,89.404048938477],[1857.0742170448,40.649372653621],[937.86217008448,86.452268216325],[1376.1183562871,22.800760011335],[2753.9747783005,12.17498537708],[2851.4987269829,31.277352605188],[1236.9876635746,83.99473627084],[1573.2924231619,39.025240957327],[933.38440730216,56.516094395268],[1189.5689971839,55.813138781397],[1125.7062005412,60.73245903588],[1147.4774562615,49.35932474714],[1040.3125250003,66.323331265801],[553.67093891948,20.935158126845],[2758.9309662492,42.221068967576],[2349.0800391036,14.329710582829],[574.35498264812,20.348829443366],[1747.8313217847,22.628197684598],[1067.3118531442,36.785483592153],[1515.3393786465,61.7241817605],[1186.8543159872,70.380844813918],[1483.884657179,15.36681547512],[1156.426709917,36.889829034792],[1362.7435423903,46.198387564559],[1283.1577995678,69.613005372647],[1376.0746520927,79.126367113616],[937.27648996676,9.8076376539799],[1285.6651705879,90.737391367001],[2157.5519050613,52.894226509304],[834.10085599891,94.370428330837],[1211.4697652314,84.811174775656],[1779.694435005,51.891314609719],[2300.4734903455,26.539196498306],[578.22110791561,120],[2913.6321668165,34.685301659266],[1696.9202504797,51.557662500372],[553.8593343201,64.598579721058],[1981.1606780744,25.689147925969],[2949.6997182538,9.7629979637836],[2028.3132417893,49.676069166469],[2800.8501846448,16.593178240986],[978.6270853755,54.493951242903],[808.3448386336,29.067415178927],[1225.0398916319,89.145742246243],[2139.4524287602,8.1674805404256],[2000.3968196417,34.370770353338],[534.32328309787,80.684729708872],[1883.3872551193,55.992712992521],[2716.4467512039,36.405943771728],[2079.287176199,24.370204323098],[881.60974296128,87.426793039743]];
+// scatterdata[] = [x: 5000, y: 100];
+// scatterdata[] = {x: 5000, y: 100, marker:{ fillColor: 'red'} };
+console.log("starting");
+    var chart = new Highcharts.Chart({
+                chart: {
+					animation: false,
+                    renderTo: 'mychart1',
+                    type: 'scatter',
+					width: 730,
+					height: 260
+                },
+				plotOptions: {
+					series: { enableMouseTracking: false, shadow: false, animation: false },
+					scatter: { turboThreshold: 1001}		// prevents assumption that all points look the same
+					 },
+                title: {
+                    text: 'Energy Use Intensity (EUI) of 215 similar homes in climate zone 5'
+                },
+                yAxis: {
+					min: 0,
+					max: 120,
+					maxPadding: 0,
+					tickInterval: 20,
+                    title: {
+                        text: 'Energy Use Intensity'
+                    }
+                },
+  				credits: {
+      				enabled: false
+  				},
+				exporting: {
+         			enabled: false
+				},
+                legend: {
+                    enabled: false
+                },
+                xAxis: {
+					min: 0,
+                    title: {
+                        text: 'Square Feet of Conditioned Space'
+                    }
+                },
+                series: [{
+					name: 'series 1',
+					data: scatterdata
+					}]
+            });
+chart.series[0].addPoint({marker:{fillColor:'red',radius: 6}, x: 2000, y: 30.5}, true, true);
+    var categories = [
+                    '0-9',
+                    '10-19',
+                    '20-29',
+                    '30-39',
+                    '40-49',
+                    '50-59',
+                    '60-69',
+                    '70-79',
+                    '80-89',
+                    '90-99',
+                    '100-109',
+                    '110-119',
+                    '120+'
+                ];
+   	var yvalues = [13,28,30,28,23,32,21,11,14,4,4,2,5];
+   	var ycolors = ["blue","blue","blue","red","blue","blue","blue","blue","blue","blue","blue","blue","blue"];
+	var data = [];
+console.log("next");
+	for(var i=0;i<=12;i++) {
+        data.push({y:yvalues[i], color: ycolors[i]});
+		}
+console.log("values, colors, data");
+console.log(yvalues);
+console.log(ycolors);
+console.log(data);
+    var chart2 = new Highcharts.Chart({
+
+                chart: {
+					animation: false,
+                    renderTo: 'mychart0',
+                    type: 'column',
+					width: 730,
+					height: 260
+                },
+				plotOptions: { series: { enableMouseTracking: false, shadow: false, animation: false } },
+                title: {
+                    text: 'Energy Use Intensity (EUI) of 215 similar homes in climate zone 5'
+                },
+                yAxis: {
+					min: 0,
+                    title: {
+                        text: 'Number of Homes'
+                    }
+                },
+  				credits: {
+      				enabled: false
+  				},
+				exporting: {
+         			enabled: false
+				},
+                legend: {
+                    enabled: false
+                },
+                xAxis: {
+					type: 'category',
+                	categories: categories
+                },
+                series: [{
+					name: 'series 1',
+					data: data
+					}]
+            });
+
+
+	var pos = 198;
+	var q=[23.38266840766,43.069162705625,61.099973987742];
+	var c  = document.getElementById('myCanvas');
+	var ct = c.getContext("2d");
+	drawSpectrum(q,ct,pos);
+console.log(pos);
+console.log(q);
+
+	var posE = 111;
+	var qElec=[13.674330131155,21.173194974062,35.59575938643];
+	var c  = document.getElementById('myElecCanvas');
+	var cte = c.getContext("2d");
+	drawSpectrum(qElec,cte,posE);
+console.log(posE);
+console.log(qElec);
+
+		var posF = 132;
+		var qFuel=[0,0,35.136845610661];
+		var c  = document.getElementById('myFuelCanvas');
+		var ctf = c.getContext("2d");
+		drawSpectrum(qFuel,ctf,posF);
+console.log(posF);
+console.log(qFuel);
+
+function drawSpectrum(q,ctx,position)
+{
+	var xBase = 80;
+	var xPoint = xBase;
+	var yPoint = 90;
+	var colors=['#00ff00','#ccff66','#ffcc66','#ff0000'];
+
+	make_base(ctx,position);
+
+	ctx.font = "12px Arial";
+	ctx.fillText("0",82,123);
+	if(q[0]>1) {		// don't squeeze in the bottom number if not necessary
+		ctx.fillText(Math.floor(q[0]),Math.floor(5*q[0]+80-6),123);
+		}
+	ctx.fillText(Math.floor(q[1]),Math.floor(5*q[1]+80-7),123);
+	ctx.fillText(Math.floor(q[2]),Math.floor(5*q[2]+80-7),123);
+	if(q[2]<112) {		// dont squeeze in the top number if not necessary
+		ctx.fillText("120",658,123);
+		}
+
+	var colorcode = 0;
+	for(var i =0; i<4;i++)
+	{
+      colorcode = colors[i];
+	  zPoint = (i==3) ? 680 : xBase + 5*q[i];
+	  colorsize = zPoint - xPoint;
+
+      ctx.beginPath();
+      ctx.fillStyle = colorcode ;      
+      ctx.rect(xPoint, yPoint, colorsize, 20);
+      xPoint = zPoint;
+      ctx.fill();
+      ctx.stroke();
+      ctx.closePath();
+	}
+}
+
+function make_base(ctx,position)
+{
+  image1 = new Image();
+  image1.src = 'images/badHouse.png';
+  image1.onload = function(){
+    ctx.drawImage(image1, 680, 50, 75, 73);
+  }
+  image2 = new Image();
+  image2.src = 'images/goodHouse.png';
+  image2.onload = function(){
+    ctx.drawImage(image2, 0, 50, 75, 73);
+  }
+  image3 = new Image();
+  image3.src = 'images/yourHouse.png';
+  image3.onload = function(){
+    ctx.drawImage(image3, position, 8, 70, 80);
+  }
+}
+
+
+});
+</script>
+<div id="page-wrapper">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+					<h1>Your Home Comparison Report
+                    <small>EUI = 30.5</small>
+					</h1>
+
+			The EUI of your home is 30.5, which puts your home in the top 66% of most efficient homes in the Department of Energy Building Performance Database for residentail properties in climate zone 5. The Energy Use Intensity (EUI) of a building provides a standard comparison calculated from energy use and size.
+			<p>
+						<canvas id="myCanvas" width="755" height="125">
+							Your browser does not support the HTML5 canvas tag.
+						</canvas>
+<p>Each colored bar represents one quarter of the homes. The best quarter of homes fall in the dark green section of the bar. The next best in the light green section, and so on.
+			</div> <!-- /.col -->
+		</div> <!-- /.row -->
+		<div class="row">
+			<div class="col-xs-12">
+			<h3>Details from the Building Performance Database</h3>
+			</div> <!-- /.col -->
+		</div> <!-- /.row -->
+		<div class="row">
+			<div class="col-xs-12">
+					The next two charts show where you are against homes up to 3000 square feet. The <span class="redText">red</span> column includes your
+					home; the <span class="redText">red</span> dot on the next chart is your home against all the comparision homes.
+					<div id="mychart0"></div>
+			</div> <!-- /.col -->
+		</div> <!-- /.row -->
+		<div class="row">
+			<div class="col-xs-12">
+					<div id="mychart1"></div>
+			</div> <!-- /.col -->
+		</div> <!-- /.row -->
+
+		<div style="page-break-before:always;">
+                <h3 class="page-header">Your Inputs
+                </h3>
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Building</h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item-narrow">2,000 Square Feet</li>
+                        <li class="list-group-item-narrow">Climate Zone 5</li>
+                        <li class="list-group-item-narrow">HERS Rated: Not Rated</li>
+                        <li class="list-group-item-narrow">Usage is based on Actuals</li>
+                        <li class="list-group-item-narrow">Provo, UT (84601)</li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Energy</h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item-narrow">Electric: 7,749 kWh/year </li>
+                        <li class="list-group-item-narrow period">$0.1200/kWh</li>
+                        <li class="list-group-item-narrow">Gas: 346 therms/year</li>
+                        <li class="list-group-item-narrow period">$1.6700 per therm</li>
+                        <li class="list-group-item-narrow">Annual Cost: $1,508</li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Present Value</h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item-narrow">Term: 30 Years</li>
+                        <li class="list-group-item-narrow">Rate: 5.00%</li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        	<small>If you want to make any changes, follow the link in your email to update and rerun the report.</small>
+        </div>
+        <!-- /.row -->
+
+        <h3 class="page-header">The Results</h3>
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">You</h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Monthly: $126</li>
+                        <li class="list-group-item">Over 30 Years: $45,231</li>
+                        <li class="list-group-item">Building EUI: 30.5</li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Zone Average</h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Monthly: $177</li>
+                        <li class="list-group-item">Over 30 Years: $63,871</li>
+                        <li class="list-group-item">Building EUI: 43.1</li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Your Gain</h3>
+                    </div>
+                    <ul id="difGroup" class="list-group">
+                        <li class="list-group-item"><img src='images/slightly.png' height='18'/> Monthly: $52</li>
+                        <li class="list-group-item"><img src='images/slightly.png' height='18' /> Over 30 Years: $18,640</li>
+                        <li class="list-group-item"><img src='images/slightly.png' height='18' /> Present Value: $10,029</li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+					<h3>Detailed Comparisons</h3>
+The Building Performance Database includes both electricity and fuel usage. Gas isn't broken out from other fuels, but the following charts separate out electric and non-electric EUI, so you can see how you compare in each.<p>
+					<canvas id="myElecCanvas" width="755" height="125">
+						Your browser does not support the HTML5 canvas tag.
+					</canvas>
+					<h4 class="ctr">Your Electric Use</h4>
+					<canvas id="myFuelCanvas" width="755" height="125">
+						Your browser does not support the HTML5 canvas tag.
+					</canvas><h4 class='ctr'>Your Gas Use</h4>			</div> <!-- /.col -->
+		</div> <!-- /.row -->
+	</div> <!-- /.container -->
+</div> <!-- /.wrapper -->
